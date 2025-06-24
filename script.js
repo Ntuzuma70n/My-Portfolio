@@ -57,56 +57,56 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
   // Enhanced Form Handling
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
+   // const contactForm = document.querySelector('.contact-form');
+  //  if (contactForm) {
+      //  contactForm.addEventListener('submit', async function(e) {
+      //      e.preventDefault();
             
-            // Validate form
-            if (!this.checkValidity()) {
-                alert('Please fill all required fields!');
-                return;
-            }
+          //  // Validate form
+          //  if (!this.checkValidity()) {
+          //      alert('Please fill all required fields!');
+          //      return;
+          //  }
 
             // Get form data
-            const formData = new FormData(this);
-            const submitBtn = this.querySelector('.submit-btn');
+           // const formData = new FormData(this);
+           // const submitBtn = this.querySelector('.submit-btn');
             
-            try {
+          //  try {
                 // Disable button during submission
                 submitBtn.disabled = true;
                 submitBtn.textContent = 'Sending...';
                 
                 // Submit to FormSubmit
-                const response = await fetch(this.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
+             //   const response = await fetch(this.action, {
+             //       method: 'POST',
+              //      body: formData,
+              //      headers: {
+              //          'Accept': 'application/json'
+               //     }
+              //  });
                 
-                if (response.ok) {
+               // if (response.ok) {
                     // Success handling
-                    alert('Thank you for your message! I will get back to you soon.');
-                    this.reset();
+                //    alert('Thank you for your message! I will get back to you soon.');
+               //     this.reset();
                     
                     // Optional: Redirect to thank-you page
-                    const nextUrl = this.querySelector('[name="_next"]').value;
-                    if (nextUrl) window.location.href = nextUrl;
-                } else {
-                    throw new Error('Form submission failed');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('Oops! Something went wrong. Please try again.');
-            } finally {
-                // Re-enable button
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Send Message';
-            }
-        });
-    }
+              //      const nextUrl = this.querySelector('[name="_next"]').value;
+             //       if (nextUrl) window.location.href = nextUrl;
+             //   } else {
+              //      throw new Error('Form submission failed');
+              //  }
+          //  } catch (error) {
+           //     console.error('Error:', error);
+         //       alert('Oops! Something went wrong. Please try again.');
+          //  } finally {
+          //      // Re-enable button
+           //     submitBtn.disabled = false;
+          //      submitBtn.textContent = 'Send Message';
+         //   }
+       // });
+   // }
     
     // Dark mode toggle (optional)
     const darkModeToggle = document.createElement('div');
